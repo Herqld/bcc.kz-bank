@@ -1,0 +1,8 @@
+2026-10-23 08:53:24 [INFO ] Initializing SQLite database...
+2026-10-23 08:53:24 [INFO ] Database already initialized (existing data kept)
+2026-10-23 08:53:25 [INFO ] PFM demo history created for the demo user
+2026-10-23 08:53:25 [INFO ] PFM READY
+2026-10-23 08:53:25 [INFO ] FEATURES READY (v3 + Finance)
+2026-10-23 08:53:25 [INFO ] SERVER STARTED on port 3000 | {"addresses":["10.64.198.245","172.26.48.1","172.25.160.1"],"smsDemo":true}
+2026-10-23 08:53:28 [INFO ] GET /api/server-info -> 200 (11ms) | {"user":null,"ip":"127.0.0.1"}
+2026-10-23 08:53:39 [INFO ] SUBSCRIPTION REMINDER | {"userId":1,"subId":1,"chargeId":1}

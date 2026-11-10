@@ -1,0 +1,30 @@
+{
+  "name": "coddy-desktop",
+  "version": "2.2.0",
+  "description": "CODDY 2.2: desktop app (Windows, macOS, Linux) for the bcc.kz demo bank",
+  "main": "main.js",
+  "author": "CODDY",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "dist:win": "electron-builder --win",
+    "dist:mac": "electron-builder --mac",
+    "dist:linux": "electron-builder --linux"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "kz.bcc.coddy",
+    "productName": "CODDY",
+    "directories": { "output": "dist" },
+    "files": ["main.js", "preload.js", "lib/**", "pages/**", "build/**", "package.json"],
+    "win": { "target": ["nsis", "portable"], "icon": "build/icon.png" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "shortcutName": "CODDY" },
+    "mac": { "target": ["dmg"], "category": "public.app-category.finance", "icon": "build/icon.png" },
+    "linux": { "target": ["AppImage", "deb"], "category": "Finance", "icon": "build/icon.png", "maintainer": "CODDY <coddy@example.com>" }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "coddy-android",
+  "version": "2.2.0",
+  "private": true,
+  "description": "CODDY 2.2: Android and iOS app (opens the banking server in a native shell)",
+  "scripts": {
+    "set-server": "node tools/set-server.js",
+    "build-apk": "node tools/build.js",
+    "sync": "npx cap sync android",
+    "open": "npx cap open android",
+    "ios-setup": "node tools/ios-setup.js"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/app": "^7.0.0",
+    "@capacitor/core": "^7.0.0",
+    "@capacitor/ios": "^7.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^7.0.0"
+  }
+}

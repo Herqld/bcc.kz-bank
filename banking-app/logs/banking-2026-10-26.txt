@@ -1,0 +1,34 @@
+2026-10-26 17:02:16 [INFO ] Initializing SQLite database...
+2026-10-26 17:02:16 [INFO ] Database already initialized (existing data kept)
+2026-10-26 17:02:16 [INFO ] PFM READY
+2026-10-26 17:02:16 [INFO ] FEATURES READY (v3 + Finance)
+2026-10-26 17:02:16 [INFO ] SERVER STARTED on port 3000 | {"addresses":["192.168.0.13","172.30.192.1","172.18.160.1"],"smsDemo":true}
+2026-10-26 17:02:20 [INFO ] GET /api/server-info -> 200 (13ms) | {"user":null,"ip":"127.0.0.1"}
+2026-10-26 17:02:31 [INFO ] SUBSCRIPTION REMINDER | {"userId":1,"subId":2,"chargeId":2}
+2026-10-26 17:54:45 [INFO ] Initializing SQLite database...
+2026-10-26 17:54:45 [INFO ] Database already initialized (existing data kept)
+2026-10-26 17:54:45 [INFO ] PFM READY
+2026-10-26 17:54:45 [INFO ] FEATURES READY (v3 + Finance)
+2026-10-26 17:54:45 [INFO ] SERVER STARTED on port 3000 | {"addresses":["192.168.0.13","172.30.192.1","172.18.160.1"],"smsDemo":true}
+2026-10-26 17:54:47 [INFO ] GET /api/server-info -> 304 (12ms) | {"user":null,"ip":"127.0.0.1"}
+2026-10-26 17:56:41 [INFO ] GET /api/config -> 304 (1ms) | {"user":null,"ip":"127.0.0.1"}
+2026-10-26 17:56:41 [INFO ] GET /api/check-auth -> 304 (1ms) | {"user":null,"ip":"127.0.0.1"}
+2026-10-26 17:56:50 [INFO ] LOGIN OK | {"userId":1,"ip":"127.0.0.1"}
+2026-10-26 17:56:50 [INFO ] POST /api/login -> 200 (97ms) | {"user":1,"ip":"127.0.0.1"}
+2026-10-26 17:56:50 [INFO ] GET /api/dashboard -> 200 (5ms) | {"user":1,"ip":"127.0.0.1"}
+2026-10-26 17:56:50 [INFO ] GET /api/deposits -> 304 (8ms) | {"user":1,"ip":"127.0.0.1"}
+2026-10-26 17:56:50 [INFO ] GET /api/crypto/wallets -> 304 (7ms) | {"user":1,"ip":"127.0.0.1"}
+2026-10-26 17:56:50 [INFO ] GET /api/transactions -> 200 (8ms) | {"user":1,"ip":"127.0.0.1"}
+2026-10-26 17:56:50 [INFO ] GET /api/notifications -> 200 (6ms) | {"user":1,"ip":"127.0.0.1"}
+2026-10-26 17:56:50 [INFO ] GET /api/admin/me -> 304 (6ms) | {"user":1,"ip":"127.0.0.1"}
+2026-10-26 17:56:50 [INFO ] GET /api/billers -> 304 (1ms) | {"user":1,"ip":"127.0.0.1"}
+2026-10-26 17:56:50 [INFO ] GET /api/cashback -> 304 (13ms) | {"user":1,"ip":"127.0.0.1"}
+2026-10-26 17:56:50 [INFO ] GET /api/pfm/brief -> 200 (10ms) | {"user":1,"ip":"127.0.0.1"}
+2026-10-26 17:57:08 [INFO ] GET /api/notifications -> 304 (2ms) | {"user":1,"ip":"127.0.0.1"}
+2026-10-26 17:57:08 [INFO ] POST /api/notifications/read -> 200 (12ms) | {"user":1,"ip":"127.0.0.1"}
+2026-10-26 18:13:12 [INFO ] Initializing SQLite database...
+2026-10-26 18:13:12 [INFO ] Database already initialized (existing data kept)
+2026-10-26 18:13:12 [INFO ] PFM READY
+2026-10-26 18:13:12 [INFO ] FEATURES READY (v3 + Finance)
+2026-10-26 18:13:12 [INFO ] SERVER STARTED on port 3000 | {"addresses":["192.168.0.13","172.30.192.1","172.18.160.1"],"smsDemo":true}
+2026-10-26 18:13:15 [INFO ] GET /api/server-info -> 304 (15ms) | {"user":null,"ip":"127.0.0.1"}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#15161a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="bcc.kz">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <link rel="icon" href="icons/icon-192.png">
+    <title>bcc.kz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="splash" aria-hidden="true"><div class="sp-logo">bcc<i>.kz</i></div><div class="sp-sub">CODDY</div><div class="sp-bar"><i></i></div></div>
+    <div id="app">
+        <main id="screen"></main>
+        <nav id="nav" hidden>
+            <button data-tab="home"><svg class="ic"><use href="#i-home"/></svg><span>Home</span></button>
+            <button data-tab="transfers"><svg class="ic"><use href="#i-transfers"/></svg><span>Transfers</span></button>
+            <button data-tab="payments"><svg class="ic"><use href="#i-payments"/></svg><span>Payments</span></button>
+            <button data-tab="history"><svg class="ic"><use href="#i-history"/></svg><span>History</span></button>
+            <button data-tab="services"><svg class="ic"><use href="#i-services"/></svg><span>Services</span></button>
+        </nav>
+    </div>
+    <div id="topbar"></div>
+    <div id="overlay" hidden></div>
+    <div id="toast" role="status"></div>
+
+    <!-- Icon set (drawn for this project) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-home" viewBox="0 0 24 24"><path d="M3.5 11 12 3.5l8.5 7.5V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z"/></symbol>
+        <symbol id="i-transfers" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M7.5 10h8m0 0-2.3-2.3M15.5 10l-2.3 2.3M16.5 14h-8m0 0 2.3-2.3M8.5 14l2.3 2.3"/></symbol>
+        <symbol id="i-payments" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M7.8 8.6h8.4M12 8.6V17M9 12h6"/></symbol>
+        <symbol id="i-history" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></symbol>
+        <symbol id="i-services" viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1.8"/><circle cx="16.8" cy="7.3" r="3.3"/><circle cx="7.3" cy="16.8" r="3.3"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.8"/></symbol>
+        <symbol id="i-own" viewBox="0 0 24 24"><path d="M3.5 11 12 3.5l8.5 7.5V20a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1z"/><path d="M8.5 14.5h7M13.5 12.3l2.2 2.2-2.2 2.2"/></symbol>
+        <symbol id="i-client" viewBox="0 0 24 24"><path d="M12 4 21 19H3z"/><path d="M12 10.2l3.4 6H8.6z"/></symbol>
+        <symbol id="i-bank" viewBox="0 0 24 24"><rect x="3" y="6" width="15" height="11" rx="2"/><path d="M6 21h13a2 2 0 0 0 2-2V10M3 10h15"/></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol>
+        <symbol id="i-request" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M9 9h6M12 9v4"/></symbol>
+        <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 13.5-5.8L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.5 5.8L4 15.5M4 20v-4.5h4.5"/></symbol>
+        <symbol id="i-support" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.6"/><rect x="17" y="13" width="4" height="6" rx="1.6"/><path d="M19 19c0 2-2 3-5 3"/></symbol>
+        <symbol id="i-refund" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 18.4 18.4 5.6"/></symbol>
+        <symbol id="i-qr" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1.2"/><rect x="14" y="4" width="6" height="6" rx="1.2"/><rect x="4" y="14" width="6" height="6" rx="1.2"/><path d="M14 14h2.5v2.5M20 14v.01M14 20v.01M17.5 20H20v-2.5"/></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12.5h5"/></symbol>
+        <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.4 5.6 6 .6-4.5 4 1.3 5.9L12 16l-5.2 3.1 1.3-5.9-4.5-4 6-.6z"/></symbol>
+        <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+        <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+        <symbol id="i-share" viewBox="0 0 24 24"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v14"/></symbol>
+        <symbol id="i-fingerprint" viewBox="0 0 24 24"><path d="M12 11v4a6 6 0 0 1-1 3M8 14.5a4 4 0 0 1 8 0c0 2.5-.6 4.2-1.6 5.6M5 12a7 7 0 0 1 14 0c0 3-.4 5.2-1.4 7M3 10a9 9 0 0 1 18 0M12 7.5a4.5 4.5 0 0 1 4.5 4.5"/></symbol>
+        <symbol id="i-backspace" viewBox="0 0 24 24"><path d="M21 5H9l-6 7 6 7h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zM12 9l6 6M18 9l-6 6"/></symbol>
+        <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></symbol>
+        <symbol id="i-wifioff" viewBox="0 0 24 24"><path d="M3 3l18 18M8.5 16.4a5 5 0 0 1 7 0M2 8.8a15 15 0 0 1 4.2-2.6M10 5.1A15 15 0 0 1 22 8.8M5 12.6a10 10 0 0 1 3.4-2M12 20h.01M15.5 10.2A10 10 0 0 1 19 12.6"/></symbol>
+        <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+        <symbol id="i-eyeoff" viewBox="0 0 24 24"><path d="M3 3l18 18M10.6 5.1A10 10 0 0 1 12 5c6.4 0 10 7 10 7a17 17 0 0 1-3.2 4M6.3 6.8A17 17 0 0 0 2 12s3.6 7 10 7c1.5 0 2.8-.3 4-.9M9.9 9.9a3 3 0 0 0 4.2 4.2"/></symbol>
+        <symbol id="i-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+        <symbol id="i-up" viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></symbol>
+        <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+        <symbol id="i-crypto" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 7.5v9M10 7.5h3a2.1 2.1 0 0 1 0 4.2H10m3.2 0a2.4 2.4 0 0 1 0 4.8H10M11.6 6v1.5m2 0V6m-2 10.5V18m2-1.5V18"/></symbol>
+        <symbol id="i-safe" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2.5"/><circle cx="12" cy="12" r="3"/><path d="M12 9v1M12 14v1M9 12h1M14 12h1"/></symbol>
+        <symbol id="i-exchange" viewBox="0 0 24 24"><path d="M5 8h13l-3-3M19 16H6l3 3"/></symbol>
+        <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h4"/></symbol>
+        <symbol id="i-msg" viewBox="0 0 24 24"><path d="M5 5.5h14v10H10l-5 4z"/><path d="M9 10h6"/></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.2"/><path d="M11 18h2"/></symbol>
+        <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></symbol>
+        <symbol id="i-bars" viewBox="0 0 24 24"><path d="M5 20V11M10 20V5M15 20v-7M20 20V9"/></symbol>
+        <symbol id="i-loan" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="12" rx="2.2"/><circle cx="12" cy="13" r="2.6"/></symbol>
+        <symbol id="i-plusbox" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M12 8v8M8 12h8"/></symbol>
+        <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="12" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></symbol>
+        <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M9.5 4.5 12 6.5l2.5-2M9.5 19.5 12 17.5l2.5 2"/></symbol>
+        <symbol id="i-plane" viewBox="0 0 24 24"><path d="M21 4 3 11l7 2.5L12.5 21 15 14l6-10z"/></symbol>
+        <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 16V12l2-5h12l2 5v4M3 16h18v3H3zM7 13h.01M17 13h.01"/></symbol>
+        <symbol id="i-trash" viewBox="0 0 24 24"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13"/></symbol>
+    </svg>
+    <script src="i18n.js"></script>
+    <script src="i18n-ru.js"></script>
+    <script src="i18n-kk.js"></script>
+    <script src="i18n-ru2.js"></script>
+    <script src="i18n-kk2.js"></script>
+    <script src="qr.js"></script>
+    <script src="app.js"></script>
+    <script src="features-ui.js"></script>
+    <script src="finance-ui.js"></script>
+    <script src="anim.js"></script>
+    <script src="bankfeel.js"></script>
+    <script src="native.js"></script>
+</body>
+</html>

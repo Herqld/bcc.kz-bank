@@ -1,0 +1,44 @@
+2026-11-07 09:14:32 [INFO ] Initializing SQLite database...
+2026-11-07 09:14:32 [INFO ] Database already initialized (existing data kept)
+2026-11-07 09:14:32 [INFO ] PFM READY
+2026-11-07 09:14:32 [INFO ] FEATURES READY (v3 + Finance)
+2026-11-07 09:14:32 [INFO ] SERVER STARTED on port 3000 | {"addresses":["192.168.0.20","172.27.0.1","172.20.96.1","172.24.128.1"],"smsDemo":true}
+2026-11-07 09:14:35 [INFO ] GET /api/server-info -> 200 (15ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-07 09:46:19 [INFO ] Initializing SQLite database...
+2026-11-07 09:46:19 [INFO ] Database already initialized (existing data kept)
+2026-11-07 09:46:19 [INFO ] PFM READY
+2026-11-07 09:46:19 [INFO ] FEATURES READY (v3 + Finance)
+2026-11-07 09:46:19 [INFO ] SERVER STARTED on port 3000 | {"addresses":["192.168.0.20","172.27.0.1","172.20.96.1","172.21.96.1"],"smsDemo":true}
+2026-11-07 09:46:32 [INFO ] GET /api/server-info -> 200 (12ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-07 10:00:53 [INFO ] GET /api/config -> 304 (1ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-07 10:00:53 [INFO ] GET /api/check-auth -> 304 (0ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-07 10:00:59 [INFO ] LOGIN OK | {"userId":1,"ip":"127.0.0.1"}
+2026-11-07 10:00:59 [INFO ] POST /api/login -> 200 (95ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-07 10:00:59 [INFO ] GET /api/deposits -> 304 (3ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-07 10:00:59 [INFO ] GET /api/dashboard -> 200 (2ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-07 10:00:59 [INFO ] GET /api/transactions -> 200 (5ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-07 10:00:59 [INFO ] GET /api/notifications -> 200 (3ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-07 10:00:59 [INFO ] GET /api/crypto/wallets -> 304 (3ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-07 10:00:59 [INFO ] GET /api/admin/me -> 304 (3ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-07 10:00:59 [INFO ] GET /api/billers -> 200 (2ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-07 10:00:59 [INFO ] GET /api/cashback -> 200 (3ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-07 10:00:59 [INFO ] GET /api/pfm/brief -> 200 (11ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-07 10:02:30 [INFO ] GET /api/config -> 200 (0ms) | {"user":null,"ip":"67.209.140.63"}
+2026-11-07 10:02:30 [INFO ] GET /api/check-auth -> 200 (0ms) | {"user":null,"ip":"67.209.140.63"}
+2026-11-07 10:02:33 [INFO ] LOGIN OK | {"userId":1,"ip":"67.209.140.63"}
+2026-11-07 10:02:33 [INFO ] POST /api/login -> 200 (97ms) | {"user":1,"ip":"67.209.140.63"}
+2026-11-07 10:02:33 [INFO ] GET /api/transactions -> 200 (5ms) | {"user":1,"ip":"67.209.140.63"}
+2026-11-07 10:02:33 [INFO ] GET /api/notifications -> 200 (1ms) | {"user":1,"ip":"67.209.140.63"}
+2026-11-07 10:02:33 [INFO ] GET /api/crypto/wallets -> 200 (2ms) | {"user":1,"ip":"67.209.140.63"}
+2026-11-07 10:02:33 [INFO ] GET /api/dashboard -> 200 (1ms) | {"user":1,"ip":"67.209.140.63"}
+2026-11-07 10:02:33 [INFO ] GET /api/admin/me -> 200 (1ms) | {"user":1,"ip":"67.209.140.63"}
+2026-11-07 10:02:33 [INFO ] GET /api/deposits -> 200 (1ms) | {"user":1,"ip":"67.209.140.63"}
+2026-11-07 10:02:33 [INFO ] GET /api/cashback -> 200 (2ms) | {"user":1,"ip":"67.209.140.63"}
+2026-11-07 10:02:33 [INFO ] GET /api/billers -> 200 (1ms) | {"user":1,"ip":"67.209.140.63"}
+2026-11-07 10:02:33 [INFO ] GET /api/pfm/brief -> 200 (4ms) | {"user":1,"ip":"67.209.140.63"}
+2026-11-07 10:04:59 [INFO ] Initializing SQLite database...
+2026-11-07 10:04:59 [INFO ] Database already initialized (existing data kept)
+2026-11-07 10:04:59 [INFO ] PFM READY
+2026-11-07 10:04:59 [INFO ] FEATURES READY (v3 + Finance)
+2026-11-07 10:04:59 [ERROR] Port 3000 is already in use. The server is probably already running in another window (START.bat, IntelliJ or terminal). Close it and try again.
+2026-11-07 10:05:02 [INFO ] GET /api/server-info -> 200 (9ms) | {"user":1,"ip":"127.0.0.1"}

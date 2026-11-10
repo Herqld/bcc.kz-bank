@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CODDY · open on your phone</title>
+<style>
+ :root { color-scheme: dark; } * { box-sizing: border-box; }
+ body { margin: 0; background: #0e0f12; color: #f2f3f5; font: 16px/1.5 system-ui, 'Segoe UI', Roboto, sans-serif; display: grid; place-items: start center; min-height: 100vh; padding: 28px 16px; }
+ .card { width: min(560px, 100%); background: #17191e; border-radius: 28px; padding: 28px; border: 1px solid #262930; }
+ h1 { margin: 0 0 4px; font-size: 28px; } h1 b { color: #16b97c; } p { color: #b7bac3; margin: 6px 0 14px; }
+ .qr { background: #fff; border-radius: 22px; padding: 14px; width: 270px; height: 270px; margin: 18px auto; display: grid; place-items: center; }
+ .qr svg { width: 100%; height: 100%; }
+ .url { text-align: center; font-size: 22px; font-weight: 700; color: #5df0b4; word-break: break-all; margin-bottom: 4px; }
+ .alts { text-align: center; color: #8d909a; font-size: 14px; margin-bottom: 12px; }
+ ol { padding-left: 20px; color: #d5d7dd; } li { margin: 8px 0; } .lang { border-top: 1px solid #262930; margin-top: 18px; padding-top: 14px; }
+ .lang h3 { margin: 0 0 6px; font-size: 14px; color: #8d909a; text-transform: uppercase; letter-spacing: .6px; }
+ .warn { background: #3a3015; color: #ffd98a; border-radius: 14px; padding: 12px 14px; font-size: 14px; margin-top: 14px; }
+ button { background: #16b97c; color: #fff; border: 0; border-radius: 14px; padding: 10px 16px; font: inherit; font-weight: 700; cursor: pointer; }
+</style></head>
+<body><div class="card">
+ <h1>CODDY <b>2.2</b></h1><p>Open the bank on your phone</p>
+ <div class="qr" id="qr">…</div>
+ <div class="url" id="url"></div><div class="alts" id="alts"></div>
+ <div class="lang"><h3>English</h3><ol><li>Phone and PC must be on the <b>same Wi-Fi</b>.</li><li>Point the phone camera at the QR code and tap the link.</li><li>Chrome menu (⋮) → <b>Add to Home screen</b>. That puts the app icon on your phone.</li></ol></div>
+ <div class="lang"><h3>Русский</h3><ol><li>Телефон и компьютер должны быть в <b>одной Wi-Fi сети</b>.</li><li>Наведите камеру телефона на QR-код и нажмите на ссылку.</li><li>Меню Chrome (⋮) → <b>Добавить на главный экран</b>: значок приложения появится на телефоне.</li></ol></div>
+ <div class="lang"><h3>Қазақша</h3><ol><li>Телефон мен компьютер <b>бір Wi-Fi желісінде</b> болуы керек.</li><li>Телефон камерасын QR-кодқа бағыттап, сілтемені басыңыз.</li><li>Chrome мәзірі (⋮) → <b>Басты экранға қосу</b>: қосымша белгішесі телефонда пайда болады.</li></ol></div>
+ <div class="warn" id="warn" hidden>No Wi-Fi address found. Connect this PC to Wi-Fi, then reload this page.<br>Wi-Fi табылмады / Wi-Fi не найден.</div>
+</div>
+<script src="qr.js"></script>
+<script>
+ fetch('/api/server-info').then(r => r.json()).then(d => {
+   // Best address depends on how THIS page was opened:
+   //  - opened via a tunnel URL or via the LAN IP -> the browser already knows a working address, use it
+   //  - opened via localhost on the PC -> use the PC's Wi-Fi address for the phone
+   const here = location.origin;
+   const hereIsLocal = /^https?:\/\/(localhost|127\.0\.0\.1|\[::1\])/i.test(here);
+   const list = (d.addresses || []).filter(a => a.likely); const all = list.length ? list : (d.addresses || []);
+   const lan = all.length ? 'http://' + all[0].address + ':' + d.port : null;
+   const tunnel = (d.publicUrls || [])[0] || null;
+   const url = hereIsLocal ? (tunnel || lan) : here;
+   if (!url) { document.getElementById('qr').textContent = '—'; document.getElementById('warn').hidden = false; return; }
+   document.getElementById('qr').innerHTML = QR.svg(url, 240); document.getElementById('url').textContent = url;
+   const alts = [tunnel, lan, ...all.slice(1).map(a => 'http://' + a.address + ':' + d.port)].filter(Boolean)
+     .filter((u, i, arr) => u !== url && arr.indexOf(u) === i);
+   if (alts.length) document.getElementById('alts').textContent = 'Other addresses: ' + alts.join('   ·   ');
+ }).catch(() => { document.getElementById('qr').textContent = '—'; document.getElementById('warn').hidden = false; });
+</script></body></html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOSCocoaTouch" propertyAccessControl="none" useAutolayout="yes" launchScreen="yes" colorMatched="yes">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in resource catalogs" minToolsVersion="11.0"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="29f-dE-wsG" userLabel="Background">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" red="0.055" green="0.059" blue="0.071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K3G-vW-9eV" userLabel="Logo Container">
+                                <rect key="frame" x="156.5" y="394" width="80" height="80"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sRm-r6-u3B">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <color key="backgroundColor" red="0.086" green="0.725" blue="0.486" alpha="0.2" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="6yZ-e1-vBt"/>
+                                            <constraint firstAttribute="height" constant="80" id="P2Q-p6-o2Y"/>
+                                        </constraints>
+                                        <layer>
+                                            <layerCornerRadius>40</layerCornerRadius>
+                                            <layerMasksToBounds>YES</layerMasksToBounds>
+                                        </layer>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v5V-r2-kXe" image="LaunchIcon" symbolConfiguration="pointSize=36;weight=medium">
+                                        <rect key="frame" x="22" y="22" width="36" height="36"/>
+                                        <color key="tintColor" red="0.086" green="0.725" blue="0.486" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="6Tk-OE-QBY" secondAttribute="centerX" id="B3V-zV-1qF"/>
+                                    <constraint firstAttribute="centerY" secondItem="6Tk-OE-QBY" secondAttribute="centerY" constant="-40" id="C4W-xZ-2rT"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CODDY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLh-dK-8mN">
+                                <rect key="frame" x="135.5" y="488" width="122" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32" weight="bold"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="29f-dE-wsG" firstAttribute="top" secondItem="6Tk-OE-QBY" secondAttribute="top" id="dD3-wX-z5S"/>
+                            <constraint firstItem="29f-dE-wsG" firstAttribute="bottom" secondItem="6Tk-OE-QBY" secondAttribute="bottom" id="eE4-xY-3zA"/>
+                            <constraint firstItem="29f-dE-wsG" firstAttribute="leading" secondItem="6Tk-OE-QBY" secondAttribute="leading" id="fF5-yZ-4qB"/>
+                            <constraint firstItem="29f-dE-wsG" firstAttribute="trailing" secondItem="6Tk-OE-QBY" secondAttribute="trailing" id="gG6-zA-5rC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-QBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-lk-8J2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LaunchIcon" width="36" height="36"/>
+    </resources>
+</document>

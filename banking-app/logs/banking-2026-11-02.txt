@@ -1,0 +1,117 @@
+2026-11-02 10:39:05 [INFO ] Initializing SQLite database...
+2026-11-02 10:39:05 [INFO ] Database already initialized (existing data kept)
+2026-11-02 10:39:05 [INFO ] PFM READY
+2026-11-02 10:39:05 [INFO ] FEATURES READY (v3 + Finance)
+2026-11-02 10:39:05 [INFO ] SERVER STARTED on port 3000 | {"addresses":["10.64.198.245","172.21.0.1","172.29.128.1","172.28.16.1"],"smsDemo":true}
+2026-11-02 10:39:08 [INFO ] GET /api/server-info -> 200 (12ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 10:39:39 [INFO ] GET /api/check-auth -> 200 (0ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 10:39:40 [INFO ] GET /api/config -> 200 (1ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 10:39:40 [INFO ] GET /api/check-auth -> 200 (1ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 10:39:52 [INFO ] LOGIN OK | {"userId":1,"ip":"127.0.0.1"}
+2026-11-02 10:39:52 [INFO ] POST /api/login -> 200 (86ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:39:52 [INFO ] GET /api/dashboard -> 200 (2ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:39:52 [INFO ] GET /api/transactions -> 200 (3ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:39:52 [INFO ] GET /api/deposits -> 200 (4ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:39:52 [INFO ] GET /api/crypto/wallets -> 200 (3ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:39:52 [INFO ] GET /api/notifications -> 200 (3ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:39:52 [INFO ] GET /api/admin/me -> 200 (2ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:39:52 [INFO ] GET /api/cashback -> 200 (5ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:39:52 [INFO ] GET /api/billers -> 200 (2ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:39:52 [INFO ] GET /api/pfm/brief -> 200 (8ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:52:37 [INFO ] GET /api/check-auth -> 200 (1ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 10:52:37 [INFO ] GET /api/config -> 304 (0ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:52:37 [INFO ] GET /api/check-auth -> 200 (0ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:52:37 [INFO ] GET /api/dashboard -> 304 (2ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:52:37 [INFO ] GET /api/transactions -> 304 (2ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:52:37 [INFO ] GET /api/deposits -> 304 (1ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:52:37 [INFO ] GET /api/crypto/wallets -> 304 (2ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:52:37 [INFO ] GET /api/notifications -> 304 (1ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:52:37 [INFO ] GET /api/admin/me -> 304 (1ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:52:37 [INFO ] GET /api/cashback -> 304 (4ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:52:37 [INFO ] GET /api/billers -> 304 (1ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:52:37 [INFO ] GET /api/pfm/brief -> 304 (4ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:04 [INFO ] GET /api/pfm/overview -> 200 (148ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:17 [INFO ] POST /api/pfm/subs/decline -> 200 (10ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:17 [INFO ] GET /api/dashboard -> 304 (2ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:17 [INFO ] GET /api/transactions -> 304 (3ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:17 [INFO ] GET /api/deposits -> 304 (2ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:17 [INFO ] GET /api/crypto/wallets -> 304 (1ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:17 [INFO ] GET /api/notifications -> 304 (1ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:17 [INFO ] GET /api/admin/me -> 304 (1ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:17 [INFO ] GET /api/cashback -> 304 (2ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:17 [INFO ] GET /api/pfm/brief -> 200 (4ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:17 [INFO ] GET /api/pfm/overview -> 200 (7ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:20 [INFO ] POST /api/pfm/subs/decide -> 200 (11ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:20 [INFO ] GET /api/dashboard -> 304 (4ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:20 [INFO ] GET /api/transactions -> 304 (4ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:20 [INFO ] GET /api/deposits -> 304 (1ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:20 [INFO ] GET /api/crypto/wallets -> 304 (1ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:20 [INFO ] GET /api/notifications -> 200 (1ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:20 [INFO ] GET /api/admin/me -> 304 (2ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:20 [INFO ] GET /api/cashback -> 304 (3ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:20 [INFO ] GET /api/pfm/brief -> 200 (4ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:53:20 [INFO ] GET /api/pfm/overview -> 200 (12ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:54:45 [INFO ] GET /api/notifications -> 304 (1ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:54:45 [INFO ] POST /api/notifications/read -> 200 (4ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:54:49 [INFO ] GET /api/pfm/overview -> 304 (10ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:55:16 [INFO ] POST /api/pfm/goals/deposit -> 200 (11ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:55:16 [INFO ] GET /api/dashboard -> 200 (1ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:55:16 [INFO ] GET /api/transactions -> 200 (2ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:55:16 [INFO ] GET /api/deposits -> 304 (1ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:55:16 [INFO ] GET /api/crypto/wallets -> 304 (1ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:55:16 [INFO ] GET /api/notifications -> 200 (1ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:55:16 [INFO ] GET /api/admin/me -> 304 (1ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:55:16 [INFO ] GET /api/cashback -> 304 (2ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:55:16 [INFO ] GET /api/pfm/brief -> 200 (3ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:55:16 [INFO ] GET /api/pfm/overview -> 200 (13ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:55:39 [INFO ] POST /api/pfm/purchase -> 200 (12ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:55:39 [INFO ] GET /api/dashboard -> 200 (3ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:55:39 [INFO ] GET /api/transactions -> 200 (4ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:55:39 [INFO ] GET /api/deposits -> 304 (2ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:55:39 [INFO ] GET /api/crypto/wallets -> 304 (3ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:55:39 [INFO ] GET /api/notifications -> 304 (2ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:55:39 [INFO ] GET /api/admin/me -> 304 (1ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:55:39 [INFO ] GET /api/cashback -> 200 (2ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:55:39 [INFO ] GET /api/pfm/brief -> 200 (3ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 10:55:39 [INFO ] GET /api/pfm/overview -> 200 (10ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 12:41:26 [INFO ] Initializing SQLite database...
+2026-11-02 12:41:26 [INFO ] Database already initialized (existing data kept)
+2026-11-02 12:41:26 [INFO ] PFM READY
+2026-11-02 12:41:26 [INFO ] FEATURES READY (v3 + Finance)
+2026-11-02 12:41:26 [INFO ] SERVER STARTED on port 3000 | {"addresses":["10.64.198.245","172.21.0.1","172.29.128.1","172.28.16.1"],"smsDemo":true}
+2026-11-02 12:41:29 [INFO ] GET /api/server-info -> 200 (10ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 12:41:59 [INFO ] GET /api/server-info -> 200 (4ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 12:42:16 [INFO ] GET /api/server-info -> 200 (4ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 12:50:46 [INFO ] GET /api/check-auth -> 200 (0ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 12:50:47 [INFO ] GET /api/config -> 304 (0ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 12:50:47 [INFO ] GET /api/check-auth -> 200 (1ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 12:50:51 [INFO ] LOGIN OK | {"userId":1,"ip":"127.0.0.1"}
+2026-11-02 12:50:51 [INFO ] POST /api/login -> 200 (86ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 12:50:51 [INFO ] GET /api/dashboard -> 304 (8ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 12:50:51 [INFO ] GET /api/transactions -> 304 (6ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 12:50:51 [INFO ] GET /api/deposits -> 304 (3ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 12:50:51 [INFO ] GET /api/crypto/wallets -> 304 (4ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 12:50:51 [INFO ] GET /api/notifications -> 304 (4ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 12:50:51 [INFO ] GET /api/admin/me -> 304 (1ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 12:50:51 [INFO ] GET /api/cashback -> 304 (5ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 12:50:51 [INFO ] GET /api/billers -> 304 (2ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 12:50:51 [INFO ] GET /api/pfm/brief -> 304 (5ms) | {"user":1,"ip":"127.0.0.1"}
+2026-11-02 12:56:31 [INFO ] GET /api/server-info -> 200 (6ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 12:57:33 [INFO ] GET /api/server-info -> 200 (5ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 12:59:42 [INFO ] GET /api/server-info -> 200 (6ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 13:05:02 [INFO ] GET /api/server-info -> 200 (7ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 13:07:49 [INFO ] GET /api/server-info -> 200 (5ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 13:13:38 [INFO ] GET /api/server-info -> 200 (7ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 13:22:27 [INFO ] GET /api/server-info -> 200 (7ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 13:38:10 [INFO ] GET /api/server-info -> 200 (6ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 13:53:00 [INFO ] GET /api/server-info -> 200 (6ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 13:54:35 [INFO ] GET /api/server-info -> 200 (8ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 13:54:35 [INFO ] GET /api/server-info -> 200 (6ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 13:57:11 [INFO ] GET /api/server-info -> 200 (5ms) | {"user":null,"ip":"10.119.217.245"}
+2026-11-02 13:58:01 [INFO ] GET /api/server-info -> 200 (6ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 14:05:19 [INFO ] GET /api/server-info -> 200 (6ms) | {"user":null,"ip":"2a0d:b201:7020:41d2:c4ad:bf11:6b1:50d6"}
+2026-11-02 14:08:55 [INFO ] GET /api/server-info -> 200 (6ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 14:12:27 [INFO ] GET /api/server-info -> 200 (4ms) | {"user":null,"ip":"162.255.197.194"}
+2026-11-02 14:14:03 [INFO ] GET /api/server-info -> 200 (4ms) | {"user":null,"ip":"127.0.0.1"}
+2026-11-02 14:15:19 [INFO ] GET /api/server-info -> 200 (5ms) | {"user":null,"ip":"162.255.197.194"}
+2026-11-02 14:15:55 [INFO ] GET /api/server-info -> 200 (5ms) | {"user":null,"ip":"162.255.197.194"}

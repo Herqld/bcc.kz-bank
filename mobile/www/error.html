@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>CODDY</title>
+<style>:root{color-scheme:dark}body{margin:0;background:#0e0f12;color:#f2f3f5;font:16px/1.5 system-ui,Roboto,sans-serif;padding:36px 22px}h1{font-size:30px;margin:0 0 6px}h1 b{color:#16b97c}p,li{color:#c3c6ce}.box{background:#17191e;border-radius:22px;padding:18px 20px;margin-top:18px}h3{margin:0 0 6px;font-size:13px;color:#8d909a;text-transform:uppercase;letter-spacing:.6px}button{background:#16b97c;color:#fff;border:0;border-radius:16px;padding:14px 22px;font:inherit;font-weight:700;width:100%;margin-top:22px}input{width:100%;box-sizing:border-box;background:#0e0f12;color:#f2f3f5;border:1px solid #2a2d35;border-radius:12px;padding:12px 14px;font:inherit;margin-top:8px}.hint{color:#8d909a;font-size:13px;margin-top:8px}</style></head>
+<body>
+<h1>CODDY <b>2.2</b></h1>
+<p>Cannot reach the bank server.</p>
+<div class="box">
+  <h3>Server address</h3>
+  <p class="hint">Check the address shown by START.bat on the PC and type it below (for example http://192.168.0.7:3000).</p>
+  <input id="url" type="url" placeholder="http://192.168.0.7:3000" autocomplete="off" autocapitalize="off" spellcheck="false">
+  <button onclick="save()">Connect · Подключить</button>
+</div>
+<script>
+const KEY = 'coddy.serverUrl';
+const inp = document.getElementById('url');
+const stored = localStorage.getItem(KEY);
+if (stored) inp.value = stored;
+function save() {
+  let v = inp.value.trim();
+  if (!v) { alert('Please enter a server address'); return; }
+  if (!/^https?:\/\//i.test(v)) v = 'http://' + v;
+  v = v.replace(/\/+$/, '');
+  try { new URL(v); } catch (e) { alert('That is not a valid address'); return; }
+  localStorage.setItem(KEY, v);
+  location.replace(v);
+}
+</script>
+</body></html>

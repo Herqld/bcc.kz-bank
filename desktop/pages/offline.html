@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CODDY</title>
+<style>:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 0,#143d31,#0e0f12 60%);color:#f2f3f5;font:16px/1.5 system-ui,'Segoe UI',Roboto,sans-serif;padding:34px 22px;min-height:100vh}
+h1{font-size:32px;margin:0 0 4px}h1 b{color:#16b97c}p,li{color:#c3c6ce}.box{background:#17191e;border-radius:22px;padding:16px 18px;margin-top:16px}h3{margin:0 0 6px;font-size:13px;color:#8d909a;text-transform:uppercase;letter-spacing:.6px}
+input{width:100%;background:#23252b;border:2px solid transparent;border-radius:14px;padding:14px;color:#fff;font:inherit;margin-top:8px}input:focus{outline:0;border-color:#16b97c}
+button{background:#16b97c;color:#fff;border:0;border-radius:14px;padding:13px 18px;font:inherit;font-weight:700;cursor:pointer;width:100%;margin-top:12px}button.ghost{background:#2a2d35}#msg{min-height:22px;color:#ff9b93;margin-top:8px}ol{padding-left:20px;margin:6px 0}code{background:#23252b;padding:2px 6px;border-radius:6px;font-size:13px}.hint{font-size:13px;color:#8d909a;margin-top:6px}
+.status{display:flex;align-items:center;gap:8px;font-size:14px;color:#c3c6ce;margin-top:8px}.dot{width:10px;height:10px;border-radius:50%;background:#ff9b93;flex:0 0 auto}.dot.ok{background:#16b97c}</style></head>
+<body><h1>CODDY <b>2.2</b></h1><p id="t1">Cannot reach the bank server.</p>
+<div class="status"><span class="dot" id="dot"></span><span id="statusText">Checking…</span></div>
+<div class="box"><h3>Server address · Адрес сервера · Сервер мекенжайы</h3>
+<input id="url" placeholder="http://192.168.1.25:3000  or  https://xxxx.trycloudflare.com" autocomplete="off" spellcheck="false">
+<button id="go">Save &amp; connect · Сохранить и подключиться · Сақтау және қосылу</button>
+<button class="ghost" id="retry">Retry · Повторить · Қайталау</button>
+<div id="msg" role="status"></div>
+<p class="hint">Examples: <code>http://localhost:3000</code> (server on this PC), <code>http://192.168.0.7:3000</code> (another PC on your Wi-Fi), <code>https://your-tunnel.example.com</code> (a public tunnel / cloud).</p></div>
+<div class="box"><h3>English</h3><ol><li>If the server runs on THIS computer: double-click <code>banking-app/START.bat</code> (or install Node.js 20+ so this app starts it by itself). Then press Retry.</li><li>If the server is on another computer or in the cloud, type its address above and press Save &amp; connect. The server must be running there.</li><li>Tip: the server prints its reachable addresses when it starts (e.g. <code>http://192.168.0.7:3000</code>). Use one of those, not <code>localhost</code>, from another PC.</li></ol></div>
+<div class="box"><h3>Русский</h3><ol><li>Если сервер на ЭТОМ компьютере: запустите <code>banking-app/START.bat</code> (или установите Node.js 20+, чтобы приложение запускало сервер само). Затем нажмите «Повторить».</li><li>Если сервер на другом компьютере или в облаке — введите его адрес выше и нажмите «Сохранить и подключиться». Сервер там должен быть запущен.</li><li>Подсказка: при запуске сервер печатает свои адреса (например <code>http://192.168.0.7:3000</code>). С другого ПК используйте их, а не <code>localhost</code>.</li></ol></div>
+<div class="box"><h3>Қазақша</h3><ol><li>Сервер ОСЫ компьютерде болса: <code>banking-app/START.bat</code> іске қосыңыз (немесе қосымша оны өзі іске қосуы үшін Node.js 20+ орнатыңыз). Содан кейін «Қайталау» басыңыз.</li><li>Сервер басқа компьютерде немесе бұлтта болса — мекенжайын жоғарыға енгізіп «Сақтау және қосылу» басыңыз. Сервер сол жерде іске қосылған болуы тиіс.</li><li>Кеңес: сервер іске қосылғанда өз мекенжайларын шығарады (мысалы <code>http://192.168.0.7:3000</code>). Басқа компьютерден <code>localhost</code> емес, соларды пайдаланыңыз.</li></ol></div>
+<script>
+ const d = window.coddyDesktop, $ = (id) => document.getElementById(id);
+ async function probe() {
+   // No CORS headers on the server, so a cross-origin fetch from this file:// page cannot be trusted.
+   // Ask the main process (same check it uses itself) instead; takes no input, so nothing to validate.
+   if (!d || !d.checkServer) return false;
+   try { return !!(await d.checkServer()); } catch (e) { return false; }
+ }
+ async function loadCfg() {
+   if (!d) { $('statusText').textContent = 'Open this page inside the CODDY desktop app'; return; }
+   try {
+     const c = await d.getConfig();
+     $('url').value = c.serverUrl || '';
+     const u = c.serverUrl || '';
+     const isLocal = /^https?:\/\/(localhost|127\.0\.0\.1|\[::1\])(:|\/|$)/i.test(u);
+     $('dot').className = 'dot';
+     if (u && await probe()) { $('dot').className = 'dot ok'; $('statusText').textContent = 'Connected to ' + u + '. Change the address and press Save & connect to switch servers.'; return; }
+     let s = 'Cannot reach ' + (u || 'any server') + '. The server must be running and reachable from this PC.';
+     if (isLocal) s += ' Note: "localhost" only works when the server runs on THIS PC. From another PC use the server\'s network address, e.g. http://192.168.0.7:3000.';
+     $('statusText').textContent = s;
+   } catch (e) {}
+ }
+ loadCfg();
+ $('go').onclick = async () => {
+   $('msg').textContent = '…'; $('statusText').textContent = 'Saving…';
+   if (!d) { $('msg').textContent = 'Open this page in the CODDY desktop app'; return; }
+   try {
+     const r = await d.setServer($('url').value);
+     if (!r.ok) { $('msg').textContent = r.message; $('statusText').textContent = 'Not connected'; return; }
+     $('msg').textContent = 'Saved: ' + r.url;
+     $('statusText').textContent = 'Connecting…';
+     // cfg:set already tried to connect. If we are still here, it failed: re-run the status check.
+     await new Promise(r2 => setTimeout(r2, 400));
+     if (document.getElementById('url')) { $('msg').textContent = ''; await loadCfg(); }
+   } catch (e) { $('msg').textContent = String(e); }
+ };
+ $('retry').onclick = async () => { $('msg').textContent = ''; $('statusText').textContent = 'Retrying…'; if (d) { const r = await d.retry(); if (r && !r.ok) { $('msg').textContent = (r.message || 'Still cannot reach the server.') + ' — ' + ($('url').value || 'no address saved'); return; } await loadCfg(); } };
+ $('url').addEventListener('keydown', (e) => { if (e.key === 'Enter') $('go').click(); });
+</script></body></html>
