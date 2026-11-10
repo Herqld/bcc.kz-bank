@@ -9,8 +9,6 @@ settings:
     SWIFT_VERSION: "5.9"
     IPHONEOS_DEPLOYMENT_TARGET: "17.0"
     CODE_SIGN_STYLE: Automatic
-    ENABLE_PREVIEWS: "NO"
-    SWIFT_EMIT_LOC_STRINGS: "YES"
     PRODUCT_BUNDLE_IDENTIFIER: kz.bcc.coddy
     PRODUCT_NAME: bcc.kz-bank
     INFOPLIST_FILE: CODDY/Info.plist
