@@ -82,7 +82,7 @@ struct HomeScreen: View {
                         .foregroundColor(.white)
 
                     if let dash = dashVM.dashboard,
-                       let unread = dash.user?.isVerified ?? false ? 1 : 0, // placeholder
+                       let unread = dash.user?.isVerified ? 1 : 0,
                        unread > 0 {
                         Circle()
                             .fill(Color.red)
