@@ -14,6 +14,7 @@ settings:
     PRODUCT_BUNDLE_IDENTIFIER: kz.bcc.coddy
     PRODUCT_NAME: bcc.kz-bank
     INFOPLIST_FILE: CODDY/Info.plist
+    ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
     TARGETED_DEVICE_FAMILY: 1
     UI_SUPPORTED_INTERFACE_ORIENTATIONS: "UI.InterfaceOrientation.Portrait"
 targets:
@@ -40,6 +41,7 @@ targets:
         ONLY_ACTIVE_ARCH: "YES"
         ARCHS: "arm64"
         VALID_ARCHS: "arm64"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
     schemes:
       bcc.kz-bank:
         build:

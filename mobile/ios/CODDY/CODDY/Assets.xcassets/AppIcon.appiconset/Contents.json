@@ -1,0 +1,108 @@
+{
+  "images": [
+    {
+      "idiom": "iphone",
+      "scale": "2x",
+      "size": "20x20"
+    },
+    {
+      "idiom": "iphone",
+      "scale": "3x",
+      "size": "20x20"
+    },
+    {
+      "idiom": "iphone",
+      "scale": "2x",
+      "size": "29x29"
+    },
+    {
+      "idiom": "iphone",
+      "scale": "3x",
+      "size": "29x29"
+    },
+    {
+      "idiom": "iphone",
+      "scale": "2x",
+      "size": "40x40"
+    },
+    {
+      "idiom": "iphone",
+      "scale": "3x",
+      "size": "40x40"
+    },
+    {
+      "idiom": "iphone",
+      "scale": "2x",
+      "size": "58x58"
+    },
+    {
+      "idiom": "iphone",
+      "scale": "3x",
+      "size": "58x58"
+    },
+    {
+      "idiom": "iphone",
+      "scale": "2x",
+      "size": "60x60"
+    },
+    {
+      "idiom": "iphone",
+      "scale": "3x",
+      "size": "60x60"
+    },
+    {
+      "idiom": "ipad",
+      "scale": "1x",
+      "size": "76x76"
+    },
+    {
+      "idiom": "ipad",
+      "scale": "2x",
+      "size": "76x76"
+    },
+    {
+      "idiom": "iphone",
+      "scale": "2x",
+      "size": "87x87"
+    },
+    {
+      "idiom": "iphone",
+      "scale": "2x",
+      "size": "102x102"
+    },
+    {
+      "idiom": "iphone",
+      "scale": "2x",
+      "size": "120x120"
+    },
+    {
+      "idiom": "iphone",
+      "scale": "3x",
+      "size": "120x120"
+    },
+    {
+      "idiom": "ipad",
+      "scale": "2x",
+      "size": "152x152"
+    },
+    {
+      "idiom": "iphone",
+      "scale": "3x",
+      "size": "167x167"
+    },
+    {
+      "idiom": "iphone",
+      "scale": "2x",
+      "size": "180x180"
+    },
+    {
+      "idiom": "appstore",
+      "scale": "1x",
+      "size": "1024x1024"
+    }
+  ],
+  "info": {
+    "author": "xcode",
+    "version": 1
+  }
+}
