@@ -36,14 +36,13 @@ jobs:
             -scheme bcc.kz-bank \
             -configuration Release \
             -destination generic/platform=iOS \
-            -quiet \
             clean build \
             CODE_SIGNING_ALLOWED=YES \
             CODE_SIGNING_REQUIRED=YES \
             CODE_SIGN_STYLE=Automatic \
             DEVELOPMENT_TEAM="" \
             PROVISIONING_PROFILE_SPECIFIER="" \
-            -allowProvisioningUpdates
+            -allowProvisioningUpdates 2>&1 | tail -50
 
       - name: Find and package IPA
         run: |
