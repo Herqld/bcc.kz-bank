@@ -245,12 +245,10 @@ struct RegisterScreen: View {
 
                         // Form
                         VStack(spacing: 16) {
-                            Group {
-                                FormField(icon: "person.fill", placeholder: "Full Name", text: $fullName)
-                                FormField(icon: "envelope.fill", placeholder: "Email", text: $email, keyboardType: .emailAddress, autocapitalization: .none)
-                                FormField(icon: "lock.fill", placeholder: "Password", text: $password, isSecure: !showPassword, showToggle: true, showPassword: $showPassword)
-                                FormField(icon: "phone.fill", placeholder: "Phone Number", text: $phone, keyboardType: .phonePad)
-                            }
+                            FormField(icon: "person.fill", placeholder: "Full Name", text: $fullName)
+                            FormField(icon: "envelope.fill", placeholder: "Email", text: $email, keyboardType: .emailAddress, autocapitalization: .none)
+                            FormField(icon: "lock.fill", placeholder: "Password", text: $password, isSecure: !showPassword, showToggle: true, showPassword: $showPassword)
+                            FormField(icon: "phone.fill", placeholder: "Phone Number", text: $phone, keyboardType: .phonePad)
                         }
                         .padding(.horizontal, 24)
 
@@ -318,7 +316,7 @@ struct FormField: View {
                 .frame(width: 20)
 
             Group {
-                if isSecure && !showPassword {
+                if isSecure && !showPassword.wrappedValue {
                     SecureField(placeholder, text: $text)
                 } else {
                     TextField(placeholder, text: $text)
@@ -329,8 +327,8 @@ struct FormField: View {
             .foregroundColor(.white)
 
             if showToggle {
-                Button(action: { showPassword.toggle() }) {
-                    Image(systemName: showPassword ? "eye.slash.fill" : "eye.fill")
+                Button(action: { showPassword.wrappedValue.toggle() }) {
+                    Image(systemName: showPassword.wrappedValue ? "eye.slash.fill" : "eye.fill")
                         .foregroundColor(.secondary)
                 }
             }
