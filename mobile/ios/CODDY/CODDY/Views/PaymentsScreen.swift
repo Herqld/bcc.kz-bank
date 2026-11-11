@@ -83,42 +83,7 @@ struct PaymentsScreen: View {
     }
 }
 
-struct ShieldBanner: View {
-    var body: some View {
-        Button(action: {}) {
-            HStack {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("bcc Shield: stop scammers before they get your money")
-                        .font(.subheadline)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                    Text("Smart checks, a trusted guardian and a panic button")
-                        .font(.caption)
-                        .foregroundColor(.white.opacity(0.8))
-                }
-
-                Spacer()
-
-                ZStack {
-                    Circle()
-                        .fill(Color(hex: "16B97C").opacity(0.2))
-                        .frame(width: 48, height: 48)
-
-                    Image(systemName: "shield.fill")
-                        .font(.system(size: 22, weight: .medium))
-                        .foregroundColor(Color(hex: "16B97C"))
-                }
-            }
-            .padding(16)
-            .background(
-                RoundedRectangle(cornerRadius: 20)
-                    .fill(Color(hex: "16B97C").opacity(0.15))
-            )
-            .padding(.horizontal, 16)
-        }
-        .buttonStyle(PlainButtonStyle())
-    }
-}
+// ShieldBanner is defined in ServicesScreen.swift
 
 struct BillerCard: View {
     let biller: Biller

@@ -82,7 +82,7 @@ struct HomeScreen: View {
                         .foregroundColor(.white)
 
                     if let dash = dashVM.dashboard,
-                       let unread = dash.user?.isVerified ? 1 : 0,
+                       let unread = (dash.user?.isVerified ?? false) ? 1 : 0,
                        unread > 0 {
                         Circle()
                             .fill(Color.red)
@@ -143,32 +143,34 @@ struct HomeScreen: View {
     }
 
     var cardCarousel: some View {
-        TabView(selection: $selectedAccountIndex) {
-            ForEach(Array((dashVM.dashboard?.accounts ?? []).enumerated()), id: \.element.id) { index, account in
-                AccountCardView(account: account, hideBalance: hideBalance)
+        VStack(spacing: 8) {
+            TabView(selection: $selectedAccountIndex) {
+                ForEach(Array((dashVM.dashboard?.accounts ?? []).enumerated()), id: \.element.id) { index, account in
+                    AccountCardView(account: account, hideBalance: hideBalance)
+                        .padding(.horizontal, 20)
+                        .tag(index)
+                }
+
+                // Add card placeholder
+                AddCardPlaceholder()
                     .padding(.horizontal, 20)
-                    .tag(index)
+                    .tag(dashVM.dashboard?.accounts.count ?? 0)
             }
+            .tabViewStyle(.page(indexDisplayMode: .never))
+            .frame(height: 220)
+            .animation(.spring(response: 0.4), value: selectedAccountIndex)
 
-            // Add card placeholder
-            AddCardPlaceholder()
-                .padding(.horizontal, 20)
-                .tag(dashVM.dashboard?.accounts.count ?? 0)
-        }
-        .tabViewStyle(.page(indexDisplayMode: .never))
-        .frame(height: 220)
-        .animation(.spring(response: 0.4), value: selectedAccountIndex)
-
-        // Page indicator
-        HStack(spacing: 8) {
-            ForEach(0..<(dashVM.dashboard?.accounts.count ?? 0) + 1, id: \.self) { index in
-                Circle()
-                    .fill(selectedAccountIndex == index ? Color(hex: "16B97C") : Color.white.opacity(0.3))
-                    .frame(width: index == selectedAccountIndex ? 24 : 8, height: 8)
-                    .animation(.spring(response: 0.3), value: selectedAccountIndex)
+            // Page indicator
+            HStack(spacing: 8) {
+                ForEach(0..<(dashVM.dashboard?.accounts.count ?? 0) + 1, id: \.self) { index in
+                    Circle()
+                        .fill(selectedAccountIndex == index ? Color(hex: "16B97C") : Color.white.opacity(0.3))
+                        .frame(width: index == selectedAccountIndex ? 24 : 8, height: 8)
+                        .animation(.spring(response: 0.3), value: selectedAccountIndex)
+                }
             }
+            .padding(.top, 8)
         }
-        .padding(.top, 8)
     }
 
     var quickActions: some View {

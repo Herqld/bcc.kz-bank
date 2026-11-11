@@ -309,7 +309,7 @@ struct FormField: View {
     var autocapitalization: TextInputAutocapitalization = .sentences
     var isSecure: Bool = false
     var showToggle: Bool = false
-    @Binding var showPassword: Bool
+    var showPassword: Binding<Bool> = .constant(false)
 
     var body: some View {
         HStack {
