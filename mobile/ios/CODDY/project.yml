@@ -26,7 +26,6 @@ targets:
           - CODDY/CODDY.xcodeproj
     resources:
       - CODDY/Info.plist
-      - CODDY/LaunchScreen.storyboard
     settings:
       base:
         CODE_SIGN_IDENTITY: "Apple Development"
