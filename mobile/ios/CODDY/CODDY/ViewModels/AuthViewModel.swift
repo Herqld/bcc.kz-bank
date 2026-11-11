@@ -13,7 +13,7 @@ class AuthViewModel: ObservableObject {
     @Published var dashboard: DashboardResponse?
 
     private let api = APIService.shared
-    private let keychain = KeychainHelper.shared
+    let keychain = KeychainHelper.shared
     private var autoLogoutTimer: Timer?
     private var lastInteraction = Date()
 
