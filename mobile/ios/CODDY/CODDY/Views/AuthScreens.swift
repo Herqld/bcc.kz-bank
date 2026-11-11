@@ -246,7 +246,7 @@ struct RegisterScreen: View {
                         // Form
                         VStack(spacing: 16) {
                             FormField(icon: "person.fill", placeholder: "Full Name", text: $fullName)
-                            FormField(icon: "envelope.fill", placeholder: "Email", text: $email, keyboardType: .emailAddress, autocapitalization: .none)
+                            FormField(icon: "envelope.fill", placeholder: "Email", text: $email, keyboardType: .emailAddress, autocapitalization: .never)
                             FormField(icon: "lock.fill", placeholder: "Password", text: $password, isSecure: !showPassword, showToggle: true, showPassword: $showPassword)
                             FormField(icon: "phone.fill", placeholder: "Phone Number", text: $phone, keyboardType: .phonePad)
                         }
